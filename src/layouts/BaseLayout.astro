@@ -22,6 +22,17 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
+    <style is:inline>
+      /* Modo claro (lofi) */
+      html[data-theme="lofi"] {
+        color: #000000 !important; /* Color negro para el texto */
+      }
+
+      /* Modo oscuro */
+      html[data-theme="dark"] {
+        color: #ffffff !important; /* Color blanco para el texto */
+      }
+    </style>
   </head>
   <body>
     <div class="fixed top-4 right-4 z-50">
@@ -52,7 +63,7 @@ const {
       });
     </script>
     </script>
-    <div class="bg-base-100 drawer lg:drawer-open">
+    <div class="bg-base-100 drawer lg:drawer-open text-current">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100">
         <Header title={SITE_TITLE} />
